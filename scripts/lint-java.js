@@ -1,4 +1,5 @@
-// code taken from facebook/react-native repo
+// code taken from facebook/react-native repo:
+// https://github.com/facebook/react-native/blob/fa0518d3d3734b397e60ae64a8ce0af06d56da28/scripts/lint-java.js
 
 'use strict';
 

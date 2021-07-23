@@ -17,6 +17,10 @@ import com.horcrux.svg.SvgPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.swmansion.reanimated.ReanimatedJSIModulePackage;
 import com.swmansion.reanimated.ReanimatedPackage;
+import com.swmansion.reanimated.example.generated.BasePackageList;
+
+import org.unimodules.adapters.react.ModuleRegistryAdapter;
+import org.unimodules.adapters.react.ReactModuleRegistryProvider;
 
 import org.reactnative.maskedview.RNCMaskedViewPackage;
 
@@ -26,6 +30,9 @@ import java.util.List;
 
 
 public class MainApplication extends Application implements ReactApplication {
+  private final ReactModuleRegistryProvider mModuleRegistryProvider = new ReactModuleRegistryProvider(
+    new BasePackageList().getPackageList()
+  );
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
     @Override
@@ -41,7 +48,8 @@ public class MainApplication extends Application implements ReactApplication {
           new SvgPackage(),
           new ReanimatedPackage(),
           new RNGestureHandlerPackage(),
-          new SafeAreaContextPackage()
+          new SafeAreaContextPackage(),
+          new ModuleRegistryAdapter(mModuleRegistryProvider)
       );
     }
 

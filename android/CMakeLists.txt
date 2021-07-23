@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.5.1)
+project("reanimated")
 
 set (CMAKE_VERBOSE_MAKEFILE ON)
 set (CMAKE_CXX_STANDARD 14)
@@ -123,7 +124,7 @@ find_library(
         NO_CMAKE_FIND_ROOT_PATH
 )
 find_library(
-        GLOG_LIB 
+        GLOG_LIB
         glog
         PATHS ${LIBRN_DIR}
         NO_CMAKE_FIND_ROOT_PATH

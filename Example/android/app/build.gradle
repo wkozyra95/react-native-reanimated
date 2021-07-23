@@ -78,6 +78,7 @@ project.ext.react = [
 ]
 def enableHermes = project.ext.react.get("enableHermes", false);
 
+apply from: '../../node_modules/react-native-unimodules/gradle.groovy'
 apply from: "../../node_modules/react-native/react.gradle"
 
 /**
@@ -179,6 +180,7 @@ dependencies {
     debugImplementation("com.facebook.flipper:flipper-fresco-plugin:${FLIPPER_VERSION}") {
         exclude group: 'com.facebook.flipper'
     }
+    addUnimodulesDependencies()
 
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/"

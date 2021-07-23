@@ -34,6 +34,7 @@ const globals = new Set([
   'Date',
   'Array',
   'ArrayBuffer',
+  'Float32Array',
   'Date',
   'HermesInternal',
   'JSON',
@@ -46,6 +47,7 @@ const globals = new Set([
   'null',
   'UIManager',
   'requestAnimationFrame',
+  'setTimeout',
   '_WORKLET',
   'arguments',
   'Boolean',
@@ -213,7 +215,7 @@ class ClosureGenerator {
           true
         )
       )
-    );
+    );c
   }
 
   generate(t, variables, names) {
